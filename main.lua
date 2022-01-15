@@ -56,7 +56,6 @@ end
 
 -- spacebar functionality
 function love.keypressed(key)
-    ----------------------------------------------------------TODOS: delete this "if selectionmade" and extend to a different state
     if selectionMade == false then
         if key == 'space' then
             if selectionCounter < 2 then
@@ -75,6 +74,10 @@ function printSelected(texts)
         else
             if selectionMade == false then
                 setTextColor(FADED)
+                if timerCount < 10 then
+                    -- sets to faded but losing alpha as timer runs out
+                    love.graphics.setColor(1, 1, 1, timerCount/20)
+                end
             else
                 setTextColor(NONE)
             end
