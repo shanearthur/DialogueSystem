@@ -1,3 +1,4 @@
+-- required files
 require 'source/constants'
 
 function love.load()
