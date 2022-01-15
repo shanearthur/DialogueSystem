@@ -26,15 +26,12 @@ end
 
 
 function love.update(dt)
-
     -- mechanic of timer reducing
     if timerCount > 0 then
         timerCount = timerCount - timerSpeed * dt
     else
         selectionMade = true
     end
-
-
 end
 
 function love.draw()
