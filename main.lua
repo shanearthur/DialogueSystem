@@ -3,6 +3,7 @@ require 'source/constants'
 
 function love.load()
 
+    -- setup window (small window for now)
     love.window.setMode(300, 200)
     love.window.setTitle(" ")
 
@@ -18,6 +19,7 @@ function love.load()
     timerLength = timerCount + 6
     timerSpeed = 15
 
+    -- selection toggle
     selectionMade = false
 
 end
@@ -25,6 +27,7 @@ end
 
 function love.update(dt)
 
+    -- mechanic of timer reducing
     if timerCount > 0 then
         timerCount = timerCount - timerSpeed * dt
     else
@@ -35,12 +38,12 @@ function love.update(dt)
 end
 
 function love.draw()
-
+    -- initial text
     setTextColor(WHITE)
     love.graphics.print("This is the first line of dialogue!", 0, 0)
-
+    -- function for printing selectable responses
     printSelected({"That's awesome.", "That's great.", "Whatever."})
-
+    -- timer bar
     love.graphics.setColor(YELLOW)
     love.graphics.rectangle('line', 0, 100, timerLength, 11, 2)
     love.graphics.rectangle('fill', 3, 103, timerCount, 5)
