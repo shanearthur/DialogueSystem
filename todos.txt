@@ -1,0 +1,3 @@
+- break game into play states
+- fade out options except selected as timer runs out?
+- different text layout: centered white text then left justified text for options?
